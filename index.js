@@ -1,1 +1,1 @@
-console.log('it works!');
+document.body.innerHTML += 'funguju!'
