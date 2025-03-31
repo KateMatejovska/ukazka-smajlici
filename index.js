@@ -21,18 +21,43 @@ document.querySelector('#smiley1').addEventListener('click', () => {
   });
     */
 
-  //toto je lepší zápis toho nahoře
+//toto je lepší zápis toho nahoře
 
-  /*
-  const selectSmiley = (evt) => {
-    evt.target.classList.add('btn-smiley--selected');
-  };
-  
-  document.querySelector('#smiley1').addEventListener('click', selectSmiley);
-  document.querySelector('#smiley2').addEventListener('click', selectSmiley);
-  document.querySelector('#smiley3').addEventListener('click', selectSmiley);
-  document.querySelector('#smiley4').addEventListener('click', selectSmiley);
-  document.querySelector('#smiley5').addEventListener('click', selectSmiley);
-  */
+/*
+const selectSmiley = (evt) => {
+  evt.target.classList.add('btn-smiley--selected');
+};
+ 
+document.querySelector('#smiley1').addEventListener('click', selectSmiley);
+document.querySelector('#smiley2').addEventListener('click', selectSmiley);
+document.querySelector('#smiley3').addEventListener('click', selectSmiley);
+document.querySelector('#smiley4').addEventListener('click', selectSmiley);
+document.querySelector('#smiley5').addEventListener('click', selectSmiley);
+*/
 
-  
+const selectSmiley = (event) => {
+  event.target.classList.add('btn-smiley--selected');
+};
+
+document.querySelectorAll(".btn-smiley").forEach((btn) => {
+  btn.addEventListener("click", selectSmiley)
+})
+
+const jmena = ["Michal", "Marie", "Dan", "Jan", "Martin", "Klara"]
+const email = []
+
+// Varianta c. 1
+jmena.forEach((hodnota) => {
+  email.push(`${hodnota}@czechitas.cz`)
+})
+
+console.log(email)
+
+// Varianta c. 2
+const email2 = jmena.map((hodnota) => {
+  return `${hodnota}@czechitas.cz`
+})
+
+const email3 = jmena.map(hodnota => `${hodnota}@czechitas.cz`)
+
+console.log(email3)
